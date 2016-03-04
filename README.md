@@ -1,1 +1,1 @@
-# spring-mybatis-atomitos
+# spring-atomikos-mybatis
