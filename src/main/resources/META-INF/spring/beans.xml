@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd">
+
+	<import resource="classpath:META-INF/spring/adatasource.xml" />
+
+	<import resource="classpath:META-INF/spring/bdatasource.xml" />
+
+	<!-- atomitos事务管理器 -->
+	<bean id="atomitosTransactionManager" class="com.atomikos.icatch.jta.UserTransactionManager"
+		init-method="init" destroy-method="close">
+		<property name="forceShutdown" value="true" />
+	</bean>
+
+	<!-- atomitos事务 -->
+	<bean id="atomikosTransaction" class="com.atomikos.icatch.jta.UserTransactionImp">
+		<property name="transactionTimeout" value="600" />
+	</bean>
+
+	<!-- Spring JTA事务管理器 -->
+	<bean id="transactionManager"
+		class="org.springframework.transaction.jta.JtaTransactionManager">
+		<property name="transactionManager" ref="atomitosTransactionManager" />
+		<property name="userTransaction" ref="atomikosTransaction" />
+	</bean>
+
+	<!-- 开启事务注解 -->
+	<tx:annotation-driven />
+
+	<!-- 开启扫描 -->
+	<context:component-scan base-package="com.oneapm.atomikos">
+		<context:include-filter type="annotation"
+			expression="org.springframework.stereotype.Service" />
+	</context:component-scan>
+
+</beans>
