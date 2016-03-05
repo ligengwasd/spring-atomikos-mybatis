@@ -14,10 +14,13 @@ import com.oneapm.atomikos.b.mapper.TblBMapper;
 public class OutterService {
     
     @Autowired
-    private TblAMapper tblAMapper;
+    private InnerService innerService;
     
     @Autowired
-    private TblBMapper tblBMapper;
+    private TblAMapper   tblAMapper;
+    
+    @Autowired
+    private TblBMapper   tblBMapper;
     
     @Transactional(propagation = Propagation.REQUIRED, rollbackFor = { Exception.class })
     public void insertTwoTables() {
@@ -31,6 +34,71 @@ public class OutterService {
         rb.setB1(2);
         rb.setB2("b");
         tblBMapper.insertSelective(rb);
+    }
+    
+    // -----------------------------------------------------------------------------------------
+    
+    @Transactional(propagation = Propagation.REQUIRED, rollbackFor = { Exception.class })
+    public void case_01() {
+        //
+        TblA ra = new TblA();
+        ra.setA1(11);
+        ra.setA2("aa");
+        tblAMapper.insertSelective(ra);
+        //
+        try {
+            innerService.case_01();
+        } catch (Exception ignore) {
+            // skip
+        }
+        //
+        TblA ra2 = new TblA();
+        ra2.setA1(111);
+        ra2.setA2("aaa");
+        tblAMapper.insertSelective(ra2);
+    }
+    
+    @Transactional(propagation = Propagation.REQUIRED, rollbackFor = { Exception.class })
+    public void case_02() {
+        //
+        TblA ra = new TblA();
+        ra.setA1(11);
+        ra.setA2("aa");
+        tblAMapper.insertSelective(ra);
+        //
+        try {
+            innerService.case_02();
+        } catch (Exception ignore) {
+            // skip
+        }
+        //
+        TblA ra2 = new TblA();
+        ra2.setA1(111);
+        ra2.setA2("aaa");
+        tblAMapper.insertSelective(ra2);
+    }
+    
+    @Transactional(propagation = Propagation.REQUIRED, rollbackFor = { Exception.class })
+    public void case_03() {
+        //
+        TblA ra = new TblA();
+        ra.setA1(11);
+        ra.setA2("aa");
+        tblAMapper.insertSelective(ra);
+        //
+        try {
+            TblB rb = new TblB();
+            rb.setB1(2);
+            rb.setB2("b");
+            tblBMapper.insertSelective(rb);
+        } catch (Exception ignore) {
+            // skip
+        }
+        //
+        TblA ra2 = new TblA();
+        ra2.setA1(111);
+        ra2.setA2("aaa");
+        tblAMapper.insertSelective(ra2);
     }
     
 }

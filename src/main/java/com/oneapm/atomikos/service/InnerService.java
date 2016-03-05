@@ -40,4 +40,22 @@ public class InnerService {
         tblBMapper.insertSelective(rb);
     }
     
+    // -----------------------------------------------------------------------------------------
+    
+    @Transactional(propagation = Propagation.REQUIRED, rollbackFor = { Exception.class })
+    public void case_01() {
+        TblB rb = new TblB();
+        rb.setB1(2);
+        rb.setB2("b");
+        tblBMapper.insertSelective(rb);
+    }
+    
+    @Transactional(propagation = Propagation.REQUIRES_NEW, rollbackFor = { Exception.class })
+    public void case_02() {
+        TblB rb = new TblB();
+        rb.setB1(2);
+        rb.setB2("b");
+        tblBMapper.insertSelective(rb);
+    }
+    
 }
