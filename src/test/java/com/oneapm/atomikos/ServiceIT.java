@@ -86,4 +86,37 @@ public class ServiceIT {
         innerService.insertTwoTblsWithoutAnnotation();
     }
     
+    /**
+     * REQUIRED -> REQUIRED <br>
+     * inner异常，outter忽略异常 <br>
+     * outter正确回滚，事务融入成功 <br>
+     * 6.log <br>
+     */
+    @Test
+    public void case_01() {
+        outterService.case_01();
+    }
+    
+    /**
+     * REQUIRED -> REQUIRES_NEW <br>
+     * inner异常，outter忽略异常 <br>
+     * outter正确提交，事务新建隔离成功 <br>
+     * 7.log <br>
+     */
+    @Test
+    public void case_02() {
+        outterService.case_02();
+    }
+    
+    /**
+     * REQUIRED -> Mapper(REQUIRED) <br>
+     * Mapper异常，outter忽略异常 <br>
+     * outter正确回滚，事务融入成功 <br>
+     * 8.log <br>
+     */
+    @Test
+    public void case_03() {
+        outterService.case_03();
+    }
+    
 }
