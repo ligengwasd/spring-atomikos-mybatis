@@ -10,13 +10,18 @@
 		<property name="uniqueResourceName" value="bds" />
 		<property name="xaDataSourceClassName"
 			value="com.mysql.jdbc.jdbc2.optional.MysqlXADataSource" />
+		<!-- NOTE: 对于Druid的XA数据源的另一种配置方法 -->
+		<!-- <property name="xaDataSourceClassName" value="com.alibaba.druid.pool.xa.DruidXADataSource"/> -->
 		<property name="xaProperties">
 			<props>
-				<prop key="url">jdbc:mysql://127.0.0.1:3313/test</prop>
+				<prop key="url">
+					jdbc:mysql://127.0.0.1:3313/test?useUnicode=true&amp;characterEncoding=utf-8
+				</prop>
 				<prop key="user">root</prop>
 				<prop key="password"></prop>
 			</props>
 		</property>
+		<property name="poolSize" value="10" />
 		<property name="minPoolSize" value="10" />
 		<property name="maxPoolSize" value="100" />
 		<property name="borrowConnectionTimeout" value="30" />
