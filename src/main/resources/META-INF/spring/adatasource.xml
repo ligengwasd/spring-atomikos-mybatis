@@ -4,20 +4,42 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-3.2.xsd
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+	<!-- druid xa datasource -->
+	<bean id="aDruidXA" class="com.alibaba.druid.pool.xa.DruidXADataSource"
+		init-method="init" destroy-method="close">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url">
+			<value>
+				jdbc:mysql://127.0.0.1:3312/test?useUnicode=true&amp;characterEncoding=utf-8
+			</value>
+		</property>
+		<property name="username" value="root" />
+		<property name="password" value="" />
+		<property name="filters" value="stat" />
+		<property name="maxActive" value="100" />
+		<property name="initialSize" value="10" />
+		<property name="maxWait" value="60000" />
+		<property name="minIdle" value="10" />
+		<property name="timeBetweenEvictionRunsMillis" value="60000" />
+		<property name="minEvictableIdleTimeMillis" value="300000" />
+		<property name="validationQuery" value="SELECT 'x'" />
+		<property name="testWhileIdle" value="true" />
+		<property name="testOnBorrow" value="false" />
+		<property name="testOnReturn" value="false" />
+		<property name="poolPreparedStatements" value="true" />
+		<property name="maxPoolPreparedStatementPerConnectionSize"
+			value="50" />
+		<property name="maxOpenPreparedStatements" value="100" />
+	</bean>
+
 	<!-- datasource数据源 -->
 	<bean id="aDataSource" class="com.atomikos.jdbc.AtomikosDataSourceBean"
 		init-method="init" destroy-method="close">
 		<property name="uniqueResourceName" value="ads" />
-		<property name="xaDataSourceClassName"
-			value="com.mysql.jdbc.jdbc2.optional.MysqlXADataSource" />
-		<property name="xaProperties">
-			<props>
-				<prop key="url">jdbc:mysql://127.0.0.1:3312/test</prop>
-				<prop key="user">root</prop>
-				<prop key="password"></prop>
-			</props>
-		</property>
-		<property name="minPoolSize" value="10" />
+		<property name="xaDataSource" ref="aDruidXA" />
+		<!-- NOTE: 注意不要添加以下注释的参数 -->
+		<!-- <property name="poolSize" value="10" /> -->
+		<!-- <property name="minPoolSize" value="10" /> -->
 		<property name="maxPoolSize" value="100" />
 		<property name="borrowConnectionTimeout" value="30" />
 		<property name="testQuery" value="select 1" />
