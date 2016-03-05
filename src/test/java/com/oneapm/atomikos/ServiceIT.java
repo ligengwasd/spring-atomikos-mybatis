@@ -73,4 +73,17 @@ public class ServiceIT {
         innerService.insertOneTableA();
     }
     
+    /**
+     * 正确插入表TblA <br>
+     * 插入表TblB失败 <br>
+     * 说明没有添加事务注解
+     * {@link org.springframework.transaction.annotation.Transactional}
+     * 的情况下，两个Mapper不在一个事务中 <br>
+     * 日志参考4.log和5.log <br>
+     */
+    @Test
+    public void test_05() {
+        innerService.insertTwoTblsWithoutAnnotation();
+    }
+    
 }
