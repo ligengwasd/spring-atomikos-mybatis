@@ -1,0 +1,172 @@
+三月 05, 2016 3:07:38 下午 org.springframework.test.context.TestContextManager retrieveTestExecutionListeners
+信息: Could not instantiate TestExecutionListener class [org.springframework.test.context.web.ServletTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their dependencies) available.
+三月 05, 2016 3:07:38 下午 org.springframework.beans.factory.xml.XmlBeanDefinitionReader loadBeanDefinitions
+信息: Loading XML bean definitions from class path resource [META-INF/spring/beans.xml]
+三月 05, 2016 3:07:39 下午 org.springframework.beans.factory.xml.XmlBeanDefinitionReader loadBeanDefinitions
+信息: Loading XML bean definitions from class path resource [META-INF/spring/adatasource.xml]
+三月 05, 2016 3:07:39 下午 org.springframework.beans.factory.xml.XmlBeanDefinitionReader loadBeanDefinitions
+信息: Loading XML bean definitions from class path resource [META-INF/spring/bdatasource.xml]
+三月 05, 2016 3:07:39 下午 org.springframework.beans.factory.xml.XmlBeanDefinitionReader loadBeanDefinitions
+信息: Loading XML bean definitions from class path resource [META-INF/spring/txmanager.xml]
+三月 05, 2016 3:07:39 下午 org.springframework.beans.factory.xml.XmlBeanDefinitionReader loadBeanDefinitions
+信息: Loading XML bean definitions from class path resource [META-INF/spring/interceptor.xml]
+三月 05, 2016 3:07:39 下午 org.springframework.context.support.GenericApplicationContext prepareRefresh
+信息: Refreshing org.springframework.context.support.GenericApplicationContext@6ebcf58a: startup date [Sat Mar 05 15:07:39 CST 2016]; root of context hierarchy
+三月 05, 2016 3:07:39 下午 org.springframework.beans.factory.support.DefaultListableBeanFactory preInstantiateSingletons
+信息: Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@4908e65f: defining beans [aDataSource,aSqlSessionFactory,org.mybatis.spring.mapper.MapperScannerConfigurer#0,bDataSource,bSqlSessionFactory,org.mybatis.spring.mapper.MapperScannerConfigurer#1,atomitosTransactionManager,atomikosTransaction,transactionManager,transactionInterceptor,org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator#0,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0,org.springframework.transaction.interceptor.TransactionInterceptor#0,org.springframework.transaction.config.internalTransactionAdvisor,innerService,outterService,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor,tblAMapper,tblBMapper]; root of factory hierarchy
+No org.slf4j.impl.StaticLoggerBinder found in ClassPath, trying with log4j...
+No org.apache.log4j.Logger found found in ClassPath, falling back default...
+三月 05, 2016 3:07:39 下午 com.atomikos.logging.JULLogger logInfo
+信息: Using Java Util Logging for logging.
+三月 05, 2016 3:07:39 下午 com.atomikos.logging.JULLogger logInfo
+信息: AtomikosDataSoureBean 'ads': init...
+三月 05, 2016 3:07:39 下午 com.atomikos.logging.JULLogger logWarning
+警告: AtomikosDataSoureBean 'ads': testQuery set - pool may be slower / you might want to consider setting maxLifetime instead...
+三月 05, 2016 3:07:39 下午 com.atomikos.logging.JULLogger logInfo
+信息: AtomikosDataSoureBean 'ads': initializing with [ xaDataSourceClassName=com.mysql.jdbc.jdbc2.optional.MysqlXADataSource, uniqueResourceName=ads, maxPoolSize=100, minPoolSize=10, borrowConnectionTimeout=30, maxIdleTime=60, reapTimeout=0, maintenanceInterval=60, testQuery=select 1, xaProperties=[user=root,password=,url=jdbc:mysql://127.0.0.1:3312/test], loginTimeout=0, maxLifetime=0]
+三月 05, 2016 3:07:40 下午 com.atomikos.logging.JULLogger logInfo
+信息: THREADS: using JDK thread pooling...
+三月 05, 2016 3:07:41 下午 com.atomikos.logging.JULLogger logInfo
+信息: AtomikosDataSoureBean 'bds': init...
+三月 05, 2016 3:07:41 下午 com.atomikos.logging.JULLogger logWarning
+警告: AtomikosDataSoureBean 'bds': testQuery set - pool may be slower / you might want to consider setting maxLifetime instead...
+三月 05, 2016 3:07:41 下午 com.atomikos.logging.JULLogger logInfo
+信息: AtomikosDataSoureBean 'bds': initializing with [ xaDataSourceClassName=com.mysql.jdbc.jdbc2.optional.MysqlXADataSource, uniqueResourceName=bds, maxPoolSize=100, minPoolSize=10, borrowConnectionTimeout=30, maxIdleTime=60, reapTimeout=0, maintenanceInterval=60, testQuery=select 1, xaProperties=[user=root,password=,url=jdbc:mysql://127.0.0.1:3313/test], loginTimeout=0, maxLifetime=0]
+三月 05, 2016 3:07:41 下午 com.atomikos.logging.JULLogger logWarning
+警告: No properties path set - looking for transactions.properties in classpath...
+三月 05, 2016 3:07:41 下午 com.atomikos.logging.JULLogger logWarning
+警告: transactions.properties not found - looking for jta.properties in classpath...
+三月 05, 2016 3:07:41 下午 com.atomikos.logging.JULLogger logWarning
+警告: Failed to open transactions properties file - using default values
+三月 05, 2016 3:07:41 下午 com.atomikos.logging.JULLogger logInfo
+信息: com.atomikos.persistence.imp.WriteAheadObjectLog instantiation failed - falling back to default
+三月 05, 2016 3:07:41 下午 com.atomikos.logging.JULLogger logInfo
+信息: Starting read of logfile G:\workspace\sts-3.6.4\spring-transaction\spring-atomikos-mybatis\.\tmlog3.log
+三月 05, 2016 3:07:41 下午 com.atomikos.logging.JULLogger logWarning
+警告: Local heuristic termination of coordinator 192.168.137.1.tm0000100004 with state COMMITTING
+三月 05, 2016 3:07:41 下午 com.atomikos.logging.JULLogger logWarning
+警告: Local heuristic termination of coordinator 192.168.137.1.tm0000100004 with state COMMITTING
+三月 05, 2016 3:07:41 下午 com.atomikos.logging.JULLogger logInfo
+信息: Done read of logfile
+三月 05, 2016 3:07:41 下午 com.atomikos.logging.JULLogger logInfo
+信息: Logfile closed: G:\workspace\sts-3.6.4\spring-transaction\spring-atomikos-mybatis\.\tmlog3.log
+三月 05, 2016 3:07:41 下午 com.atomikos.logging.JULLogger logInfo
+信息: ads: refreshed XAResource
+三月 05, 2016 3:07:41 下午 com.atomikos.logging.JULLogger logInfo
+信息: bds: refreshed XAResource
+三月 05, 2016 3:07:41 下午 com.atomikos.logging.JULLogger logInfo
+信息: USING core version: 3.9.3
+三月 05, 2016 3:07:41 下午 com.atomikos.logging.JULLogger logInfo
+信息: USING com.atomikos.icatch.automatic_resource_registration = true
+三月 05, 2016 3:07:41 下午 com.atomikos.logging.JULLogger logInfo
+信息: USING com.atomikos.icatch.client_demarcation = false
+三月 05, 2016 3:07:41 下午 com.atomikos.logging.JULLogger logInfo
+信息: USING com.atomikos.icatch.threaded_2pc = false
+三月 05, 2016 3:07:41 下午 com.atomikos.logging.JULLogger logInfo
+信息: USING com.atomikos.icatch.serial_jta_transactions = true
+三月 05, 2016 3:07:41 下午 com.atomikos.logging.JULLogger logInfo
+信息: USING com.atomikos.icatch.serializable_logging = true
+三月 05, 2016 3:07:41 下午 com.atomikos.logging.JULLogger logInfo
+信息: USING com.atomikos.icatch.log_base_dir = .\
+三月 05, 2016 3:07:41 下午 com.atomikos.logging.JULLogger logInfo
+信息: USING com.atomikos.icatch.max_actives = 50
+三月 05, 2016 3:07:41 下午 com.atomikos.logging.JULLogger logInfo
+信息: USING com.atomikos.icatch.checkpoint_interval = 500
+三月 05, 2016 3:07:41 下午 com.atomikos.logging.JULLogger logInfo
+信息: USING com.atomikos.icatch.enable_logging = true
+三月 05, 2016 3:07:41 下午 com.atomikos.logging.JULLogger logInfo
+信息: USING com.atomikos.icatch.output_dir = .\
+三月 05, 2016 3:07:41 下午 com.atomikos.logging.JULLogger logInfo
+信息: USING com.atomikos.icatch.log_base_name = tmlog
+三月 05, 2016 3:07:41 下午 com.atomikos.logging.JULLogger logInfo
+信息: USING com.atomikos.icatch.max_timeout = 300000
+三月 05, 2016 3:07:41 下午 com.atomikos.logging.JULLogger logInfo
+信息: USING com.atomikos.icatch.tm_unique_name = 192.168.137.1.tm
+三月 05, 2016 3:07:41 下午 com.atomikos.logging.JULLogger logInfo
+信息: USING java.naming.factory.initial = com.sun.jndi.rmi.registry.RegistryContextFactory
+三月 05, 2016 3:07:41 下午 com.atomikos.logging.JULLogger logInfo
+信息: USING java.naming.provider.url = rmi://localhost:1099
+三月 05, 2016 3:07:41 下午 com.atomikos.logging.JULLogger logInfo
+信息: USING com.atomikos.icatch.service = com.atomikos.icatch.standalone.UserTransactionServiceFactory
+三月 05, 2016 3:07:41 下午 com.atomikos.logging.JULLogger logInfo
+信息: USING com.atomikos.icatch.force_shutdown_on_vm_exit = false
+三月 05, 2016 3:07:41 下午 com.atomikos.logging.JULLogger logInfo
+信息: USING com.atomikos.icatch.default_jta_timeout = 10000
+三月 05, 2016 3:07:41 下午 org.springframework.transaction.jta.JtaTransactionManager checkUserTransactionAndTransactionManager
+信息: Using JTA UserTransaction: com.atomikos.icatch.jta.UserTransactionImp@4c8ca8d2
+三月 05, 2016 3:07:41 下午 org.springframework.transaction.jta.JtaTransactionManager checkUserTransactionAndTransactionManager
+信息: Using JTA TransactionManager: com.atomikos.icatch.jta.UserTransactionManager@269f9a41
+三月 05, 2016 3:07:42 下午 com.atomikos.logging.JULLogger logWarning
+警告: Attempt to create a transaction with a timeout that exceeds com.atomikos.icatch.max_timeout - truncating to: 300000
+三月 05, 2016 3:07:42 下午 com.atomikos.logging.JULLogger logInfo
+信息: createCompositeTransaction ( 600000 ): created new ROOT transaction with id 192.168.137.1.tm0000100005
+三月 05, 2016 3:07:42 下午 com.atomikos.logging.JULLogger logInfo
+信息: AtomikosDataSoureBean 'ads': getConnection ( null )...
+三月 05, 2016 3:07:42 下午 com.atomikos.logging.JULLogger logInfo
+信息: AtomikosDataSoureBean 'ads': init...
+三月 05, 2016 3:07:42 下午 com.atomikos.logging.JULLogger logInfo
+信息: atomikos connection proxy for com.mysql.jdbc.jdbc2.optional.JDBC4ConnectionWrapper@42d2b7d8: calling getAutoCommit...
+三月 05, 2016 3:07:42 下午 com.atomikos.logging.JULLogger logInfo
+信息: addParticipant ( XAResourceTransaction: 3139322E3136382E3133372E312E746D30303030313030303035:3139322E3136382E3133372E312E746D31 ) for transaction 192.168.137.1.tm0000100005
+三月 05, 2016 3:07:42 下午 com.atomikos.logging.JULLogger logInfo
+信息: XAResource.start ( 3139322E3136382E3133372E312E746D30303030313030303035:3139322E3136382E3133372E312E746D31 , XAResource.TMNOFLAGS ) on resource ads represented by XAResource instance com.mysql.jdbc.jdbc2.optional.JDBC4MysqlXAConnection@3baf24e2
+三月 05, 2016 3:07:42 下午 com.atomikos.logging.JULLogger logInfo
+信息: registerSynchronization ( com.atomikos.jdbc.AtomikosConnectionProxy$JdbcRequeueSynchronization@fb2d7fb2 ) for transaction 192.168.137.1.tm0000100005
+三月 05, 2016 3:07:42 下午 com.atomikos.logging.JULLogger logInfo
+信息: atomikos connection proxy for com.mysql.jdbc.jdbc2.optional.JDBC4ConnectionWrapper@42d2b7d8: calling prepareStatement(insert into tbl_a
+     ( a1,
+      
+      
+        a2 ) 
+     values ( ?,
+      
+      
+        ? ))...
+三月 05, 2016 3:07:42 下午 com.atomikos.logging.JULLogger logInfo
+信息: atomikos connection proxy for com.mysql.jdbc.jdbc2.optional.JDBC4ConnectionWrapper@42d2b7d8: close()...
+三月 05, 2016 3:07:42 下午 com.atomikos.logging.JULLogger logInfo
+信息: XAResource.end ( 3139322E3136382E3133372E312E746D30303030313030303035:3139322E3136382E3133372E312E746D31 , XAResource.TMSUCCESS ) on resource ads represented by XAResource instance com.mysql.jdbc.jdbc2.optional.JDBC4MysqlXAConnection@3baf24e2
+三月 05, 2016 3:07:42 下午 com.atomikos.logging.JULLogger logInfo
+信息: commit() done (by application) of transaction 192.168.137.1.tm0000100005
+三月 05, 2016 3:07:42 下午 com.atomikos.logging.JULLogger logInfo
+信息: XAResource.commit ( 3139322E3136382E3133372E312E746D30303030313030303035:3139322E3136382E3133372E312E746D31 , true ) on resource ads represented by XAResource instance com.mysql.jdbc.jdbc2.optional.JDBC4MysqlXAConnection@3baf24e2
+三月 05, 2016 3:07:42 下午 com.atomikos.logging.JULLogger logWarning
+警告: Attempt to create a transaction with a timeout that exceeds com.atomikos.icatch.max_timeout - truncating to: 300000
+三月 05, 2016 3:07:42 下午 com.atomikos.logging.JULLogger logInfo
+信息: createCompositeTransaction ( 600000 ): created new ROOT transaction with id 192.168.137.1.tm0000200005
+三月 05, 2016 3:07:42 下午 com.atomikos.logging.JULLogger logInfo
+信息: AtomikosDataSoureBean 'bds': getConnection ( null )...
+三月 05, 2016 3:07:42 下午 com.atomikos.logging.JULLogger logInfo
+信息: AtomikosDataSoureBean 'bds': init...
+三月 05, 2016 3:07:42 下午 com.atomikos.logging.JULLogger logInfo
+信息: atomikos connection proxy for com.mysql.jdbc.jdbc2.optional.JDBC4ConnectionWrapper@45f0b44: calling getAutoCommit...
+三月 05, 2016 3:07:42 下午 com.atomikos.logging.JULLogger logInfo
+信息: addParticipant ( XAResourceTransaction: 3139322E3136382E3133372E312E746D30303030323030303035:3139322E3136382E3133372E312E746D32 ) for transaction 192.168.137.1.tm0000200005
+三月 05, 2016 3:07:42 下午 com.atomikos.logging.JULLogger logInfo
+信息: XAResource.start ( 3139322E3136382E3133372E312E746D30303030323030303035:3139322E3136382E3133372E312E746D32 , XAResource.TMNOFLAGS ) on resource bds represented by XAResource instance com.mysql.jdbc.jdbc2.optional.JDBC4MysqlXAConnection@7bdc9f99
+三月 05, 2016 3:07:42 下午 com.atomikos.logging.JULLogger logInfo
+信息: registerSynchronization ( com.atomikos.jdbc.AtomikosConnectionProxy$JdbcRequeueSynchronization@fce25851 ) for transaction 192.168.137.1.tm0000200005
+三月 05, 2016 3:07:42 下午 com.atomikos.logging.JULLogger logInfo
+信息: atomikos connection proxy for com.mysql.jdbc.jdbc2.optional.JDBC4ConnectionWrapper@45f0b44: calling prepareStatement(insert into tbl_b
+     ( b1,
+      
+      
+        b2 ) 
+     values ( ?,
+      
+      
+        ? ))...
+三月 05, 2016 3:07:42 下午 org.springframework.beans.factory.xml.XmlBeanDefinitionReader loadBeanDefinitions
+信息: Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+三月 05, 2016 3:07:42 下午 org.springframework.jdbc.support.SQLErrorCodesFactory <init>
+信息: SQLErrorCodes loaded: [DB2, Derby, H2, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase]
+三月 05, 2016 3:07:42 下午 com.atomikos.logging.JULLogger logInfo
+信息: atomikos connection proxy for com.mysql.jdbc.jdbc2.optional.JDBC4ConnectionWrapper@45f0b44: calling getMetaData...
+三月 05, 2016 3:07:42 下午 com.atomikos.logging.JULLogger logInfo
+信息: atomikos connection proxy for com.mysql.jdbc.jdbc2.optional.JDBC4ConnectionWrapper@45f0b44: close()...
+三月 05, 2016 3:07:42 下午 com.atomikos.logging.JULLogger logInfo
+信息: XAResource.end ( 3139322E3136382E3133372E312E746D30303030323030303035:3139322E3136382E3133372E312E746D32 , XAResource.TMSUCCESS ) on resource bds represented by XAResource instance com.mysql.jdbc.jdbc2.optional.JDBC4MysqlXAConnection@7bdc9f99
+三月 05, 2016 3:07:42 下午 com.atomikos.logging.JULLogger logInfo
+信息: XAResource.rollback ( 3139322E3136382E3133372E312E746D30303030323030303035:3139322E3136382E3133372E312E746D32 ) on resource bds represented by XAResource instance com.mysql.jdbc.jdbc2.optional.JDBC4MysqlXAConnection@7bdc9f99
+三月 05, 2016 3:07:42 下午 com.atomikos.logging.JULLogger logInfo
+信息: rollback() done of transaction 192.168.137.1.tm0000200005
