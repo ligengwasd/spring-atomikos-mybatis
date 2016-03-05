@@ -6,27 +6,17 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd">
 
+	<!-- a DataSource -->
 	<import resource="classpath:META-INF/spring/adatasource.xml" />
 
+	<!-- b DataSource -->
 	<import resource="classpath:META-INF/spring/bdatasource.xml" />
 
-	<!-- atomitos事务管理器 -->
-	<bean id="atomitosTransactionManager" class="com.atomikos.icatch.jta.UserTransactionManager"
-		init-method="init" destroy-method="close">
-		<property name="forceShutdown" value="true" />
-	</bean>
+	<!-- transaction manager -->
+	<import resource="classpath:META-INF/spring/txmanager.xml" />
 
-	<!-- atomitos事务 -->
-	<bean id="atomikosTransaction" class="com.atomikos.icatch.jta.UserTransactionImp">
-		<property name="transactionTimeout" value="600" />
-	</bean>
-
-	<!-- Spring JTA事务管理器 -->
-	<bean id="transactionManager"
-		class="org.springframework.transaction.jta.JtaTransactionManager">
-		<property name="transactionManager" ref="atomitosTransactionManager" />
-		<property name="userTransaction" ref="atomikosTransaction" />
-	</bean>
+	<!-- transaction interceptor -->
+	<import resource="classpath:META-INF/spring/interceptor.xml" />
 
 	<!-- 开启事务注解 -->
 	<tx:annotation-driven />
