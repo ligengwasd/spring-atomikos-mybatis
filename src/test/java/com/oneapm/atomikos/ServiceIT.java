@@ -28,10 +28,10 @@ public class ServiceIT {
     private InnerService  innerService;
     
     @Autowired
-    private TblAMapper    tblAMapper;
+    private TblAMapper tblAMapper;
     
     @Autowired
-    private TblBMapper    tblBMapper;
+    private TblBMapper tblBMapper;
     
     /**
      * 正确回滚 <br>
@@ -39,7 +39,7 @@ public class ServiceIT {
      */
     @Test
     public void test_01() {
-        outterService.insertTwoTables();
+        outterService.insertTwoTables(1);
     }
     
     /**

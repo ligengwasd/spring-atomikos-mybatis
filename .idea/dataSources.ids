@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - income@localhost" uuid="ad104f0d-991b-48e2-8953-b97b0ef9b424">
+    <database-info product="MySQL" version="5.6.28-0ubuntu0.15.10.1" jdbc-version="4.0" driver-name="MySQL-AB JDBC Driver" driver-version="mysql-connector-java-5.1.20 ( Revision: tonci.grgin@oracle.com-20111003110438-qfydx066wsbydkbw )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact"/>
+    <schema name="" catalog="income"/>
+    <table name="income" schema="" catalog="income" type="TABLE">
+      <column name="id" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
+      <column name="money" sqlType="DECIMAL" precision="13" scale="2" nullable="false" jdbcType="3"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="tbl_a" schema="" catalog="income" type="TABLE">
+      <column name="a1" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="a2" sqlType="CHAR" precision="10" scale="0" nullable="true" jdbcType="1"/>
+      <primary-key name="PRIMARY" columns="a1"/>
+    </table>
+  </data-source>
+  <data-source name="MySQL - outcome@localhost" uuid="8e8b7a6f-499e-4621-b82d-3905710c0026">
+    <database-info product="MySQL" version="5.6.28-0ubuntu0.15.10.1" jdbc-version="4.0" driver-name="MySQL-AB JDBC Driver" driver-version="mysql-connector-java-5.1.20 ( Revision: tonci.grgin@oracle.com-20111003110438-qfydx066wsbydkbw )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact"/>
+    <schema name="" catalog="outcome"/>
+    <table name="outcome" schema="" catalog="outcome" type="TABLE">
+      <column name="id" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
+      <column name="money" sqlType="DECIMAL" precision="13" scale="2" nullable="false" jdbcType="3"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="tbl_b" schema="" catalog="outcome" type="TABLE">
+      <column name="b1" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="b2" sqlType="CHAR" precision="10" scale="0" nullable="true" jdbcType="1"/>
+      <primary-key name="PRIMARY" columns="b1"/>
+    </table>
+  </data-source>
+</component>

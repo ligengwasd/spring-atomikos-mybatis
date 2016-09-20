@@ -23,12 +23,15 @@ public class OutterService {
     private TblBMapper   tblBMapper;
     
     @Transactional(propagation = Propagation.REQUIRED, rollbackFor = { Exception.class })
-    public void insertTwoTables() {
+    public void insertTwoTables(int id) {
         //
         TblA ra = new TblA();
         ra.setA1(11);
         ra.setA2("aa");
         tblAMapper.insertSelective(ra);
+        if (id ==1){
+            throw new RuntimeException("111111111111");
+        }
         //
         TblB rb = new TblB();
         rb.setB1(2);

@@ -15,7 +15,7 @@
 		<property name="xaProperties">
 			<props>
 				<prop key="url">
-					jdbc:mysql://127.0.0.1:3313/test?useUnicode=true&amp;characterEncoding=utf-8
+					jdbc:mysql://127.0.0.1:3306/outcome?useUnicode=true&amp;characterEncoding=utf-8
 				</prop>
 				<prop key="user">root</prop>
 				<prop key="password"></prop>
